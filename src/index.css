@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', 'Noto Sans Ethiopic', sans-serif;
+  color: #292D29;
+  background: #F8F5EF;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #F8F5EF;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-amharic {
+  font-family: 'Noto Sans Ethiopic', sans-serif;
+}
+
+::selection {
+  background: #C5A46D;
+  color: #173B32;
+}
+
+/* Entrance animations */
+
+.fade-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Food card image animation */
+
+.food-image {
+  transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+
+.food-card:hover .food-image {
+  transform: scale(1.07);
+}
+
+.food-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(23, 59, 50, 0.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
